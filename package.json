@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate-parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jessica",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.4.6",
+    "postcss-modules": "^1.4.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.8",
+    "sass": "^1.16.1"
+  }
+}

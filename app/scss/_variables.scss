@@ -1,0 +1,65 @@
+$show-home-image: true;
+$home-image: url(../../img/background.jpg);
+$portrait-image: url(../../img/gokalp.jpg);
+$portrait-small: url(../../img/gokalp-small.jpg);
+$background-opacity: 0.6;
+
+@mixin easeOut {
+    transition: all 0.7s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: rgba($primary-color,$background-opacity);
+            }
+        }
+    }
+}
+
+// Set Text Color
+@function setTextColor($color) {
+    @if (lightness($color) > 40) {
+        @return $black;
+    } @else {
+        @return $white;
+    }
+}
+
+// Media Query Mixins
+
+@mixin mediaSmall {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin mediaMedium {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLarge {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+
+@mixin mediaExtra {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}
